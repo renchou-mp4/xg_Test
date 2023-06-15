@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace Config
 {
-    public class AssetBundleConfig : MonoBehaviour
+    public class AssetBundleConfig
     {
         private const string m_BundlePath = "Bundles/";
+        private const string m_OutPutPath = "Bundle";
     }
 }
