@@ -8,6 +8,10 @@ using UnityEditor;
 /// </summary>
 public class BuildAssetBundle
 {
+    private AssetBundleBuild[] m_ABBuilds;
+
+
+
     /// <summary>
     /// 在编辑器中构建AB包
     /// </summary>
@@ -58,6 +62,7 @@ public class BuildAssetBundle
 
     private static void GetAssetBundleBuilds()
     {
-
+        AssetBundleBuild a;
+        
     }
 }
