@@ -1,15 +1,17 @@
 using Config;
+using System.IO;
 using UnityEngine;
+using UnityEngine.Windows;
 
 namespace Tools
 {
     /// <summary>
-    /// Â·¾¶¹¤¾ßÀà
+    /// è·¯å¾„å·¥å…·ç±»
     /// </summary>
     public class PathTool
     {
         /// <summary>
-        /// ·µ»ØAssetsÎÄ¼þ¼ÐÂ·¾¶
+        /// è¿”å›žAssetsæ–‡ä»¶å¤¹è·¯å¾„
         /// </summary>
         /// <returns>.../Assets</returns>
         public static string GetAssetsPath()
@@ -18,12 +20,21 @@ namespace Tools
         }
 
         /// <summary>
-        /// ·µ»ØEditorÏÂBundlesµÄÂ·¾¶
+        /// è¿”å›žEditorä¸‹Bundlesçš„è·¯å¾„
         /// </summary>
         /// <returns></returns>
         public static string GetEditorBundlePath()
         {
             return GetAssetsPath() + AssetBundleConfig.m_BundlePath;
+        }
+
+
+        public static string[] GetFileNameByPath(string path,bool includeExtension = false)
+        {
+            if(includeExtension)
+            {
+                return System.IO.Directory.GetFiles(path,);
+            }
         }
     }
 }

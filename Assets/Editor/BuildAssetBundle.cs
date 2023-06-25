@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.IO;
 
 /// <summary>
 /// 构建AB包
@@ -10,6 +11,7 @@ public class BuildAssetBundle
 {
     private AssetBundleBuild[] m_ABBuilds;
 
+    private static Dictionary<string, string> m_AssetPath; 
 
 
     /// <summary>
@@ -65,4 +67,16 @@ public class BuildAssetBundle
         AssetBundleBuild a;
         
     }
+
+
+    private static void GetAllAssetPath(string path)
+    {
+        string[] temp_AssetPath = Directory.GetDirectories(path);
+        if (temp_AssetPath.Length==0)
+        {
+            Directory.GetFiles(path);
+        }
+    }
+
+
 }
