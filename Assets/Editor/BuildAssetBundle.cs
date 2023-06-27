@@ -75,6 +75,7 @@ public class BuildAssetBundle
         if (temp_AssetPath.Length==0)
         {
             Directory.GetFiles(path);
+            m_AssetPath.Add()
         }
     }
 

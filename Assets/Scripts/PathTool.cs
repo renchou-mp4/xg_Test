@@ -28,12 +28,22 @@ namespace Tools
             return GetAssetsPath() + AssetBundleConfig.m_BundlePath;
         }
 
-
-        public static string[] GetFileNameByPath(string path,bool includeExtension = false)
+        /// <summary>
+        /// 根据路径返回文件名称(可带扩展名)
+        /// </summary>
+        /// <param name="path">路径</param>
+        /// <param name="includeExtension">是否包含扩展名</param>
+        /// <returns></returns>
+        public static string GetFileNameByPath(string path, bool includeExtension = false)
         {
             if(includeExtension)
             {
-                return System.IO.Directory.GetFiles(path,);
+                return path.Substring(path.LastIndexOf("/") + 1);
+            }
+            else
+            {
+                string temp = path.Substring(path.LastIndexOf("/") + 1);
+                return temp.Remove(temp.LastIndexOf("."));
             }
         }
     }
