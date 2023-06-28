@@ -8,7 +8,7 @@ namespace Tools
     /// <summary>
     /// 路径工具类
     /// </summary>
-    public class PathTool
+    public static class PathTool
     {
         /// <summary>
         /// 返回Assets文件夹路径

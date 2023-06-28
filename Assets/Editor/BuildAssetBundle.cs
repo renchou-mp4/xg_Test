@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using Codice.CM.Common;
+using Tools;
 
 /// <summary>
 /// 构建AB包
@@ -71,8 +73,15 @@ public class BuildAssetBundle
 
     private static void GetAllAssetPath(string path)
     {
-        string[] temp_AssetPath = Directory.GetDirectories(path);
-        if (temp_AssetPath.Length==0)
+        string[] assetPaths = Directory.GetDirectories(path);
+        string[] fileNames = Directory.GetFiles(path,); 
+
+        for(int i = 0;i< fileNames.Length;i++)
+        {
+            m_AssetPath.Add()
+        }
+
+        if (assetPaths.Length>0)
         {
             Directory.GetFiles(path);
             m_AssetPath.Add()
