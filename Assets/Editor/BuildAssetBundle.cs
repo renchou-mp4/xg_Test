@@ -13,7 +13,7 @@ public class BuildAssetBundle
 {
     private AssetBundleBuild[] m_ABBuilds;
 
-    private static Dictionary<string, string> m_AssetPath; 
+    private static List<string> m_AssetPath; 
 
 
     /// <summary>
@@ -73,18 +73,20 @@ public class BuildAssetBundle
 
     private static void GetAllAssetPath(string path)
     {
-        string[] assetPaths = Directory.GetDirectories(path);
-        string[] fileNames = Directory.GetFiles(path,); 
+        string[] directoriesPaths = Directory.GetDirectories(path);
+        string[] filePaths = Directory.GetFiles(path); 
 
-        for(int i = 0;i< fileNames.Length;i++)
+        for(int i = 0;i< filePaths.Length;i++)
         {
-            m_AssetPath.Add()
+            m_AssetPath.AddRange(filePaths);
         }
 
-        if (assetPaths.Length>0)
+        if (directoriesPaths.Length>0)
         {
-            Directory.GetFiles(path);
-            m_AssetPath.Add()
+            for(int i =0;i<directoriesPaths.Length; i++)
+            {
+                GetAllAssetPath(directoriesPaths[i]);
+            }
         }
     }
 
