@@ -1,20 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Tools;
+using UnityEngine;
 
 public class TEST : MonoBehaviour
 {
+    int i = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        string s = PathTool.GetFileNameByPath("D:/SeaFileDownload/Seafile/动作/Spine/hero/赛季英雄/X赛季英雄/alvaro.png");
-        Debug.Log(s);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //LogTool.LogClear();
+        if (i >= 10) return;
+        for (; i < 10; i++)
+        {
+            FileLogTool.Log(i.ToString());
+        }
+        FileLogTool.LogFormat("第{0}次输出！", i);
+        FileLogTool.LogDispose();
     }
 }

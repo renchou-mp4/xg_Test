@@ -1,10 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
 using System.IO;
-using Codice.CM.Common;
-using Tools;
+using UnityEditor;
 
 /// <summary>
 /// 构建AB包
@@ -13,7 +9,7 @@ public class BuildAssetBundle
 {
     private AssetBundleBuild[] m_ABBuilds;
 
-    private static List<string> m_AssetPath; 
+    private static List<string> m_AssetPath;
 
 
     /// <summary>
@@ -67,23 +63,23 @@ public class BuildAssetBundle
     private static void GetAssetBundleBuilds()
     {
         AssetBundleBuild a;
-        
+
     }
 
 
     private static void GetAllAssetPath(string path)
     {
         string[] directoriesPaths = Directory.GetDirectories(path);
-        string[] filePaths = Directory.GetFiles(path); 
+        string[] filePaths = Directory.GetFiles(path);
 
-        for(int i = 0;i< filePaths.Length;i++)
+        for (int i = 0; i < filePaths.Length; i++)
         {
             m_AssetPath.AddRange(filePaths);
         }
 
-        if (directoriesPaths.Length>0)
+        if (directoriesPaths.Length > 0)
         {
-            for(int i =0;i<directoriesPaths.Length; i++)
+            for (int i = 0; i < directoriesPaths.Length; i++)
             {
                 GetAllAssetPath(directoriesPaths[i]);
             }

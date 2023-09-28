@@ -1,7 +1,5 @@
 using Config;
-using System.IO;
 using UnityEngine;
-using UnityEngine.Windows;
 
 namespace Tools
 {
@@ -36,7 +34,7 @@ namespace Tools
         /// <returns></returns>
         public static string GetFileNameByPath(string path, bool includeExtension = false)
         {
-            if(includeExtension)
+            if (includeExtension)
             {
                 return path.Substring(path.LastIndexOf("/") + 1);
             }
